@@ -1,0 +1,8 @@
+body{
+    background-image: url(pics/prostye-oblaka.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    width: 70%;
+    /*text-align: center;*/
+    margin: auto;
+}
