@@ -29,7 +29,7 @@
 				</select>
 				<br><br>
 				<input type="submit" value="Рассчитать"/>
-				<br><br>
+				<br><br>				
 				<b>Расчетное напряжение, МПа : ${RESULT} </b>
 				<br><br>
 				<b>"Запас прочности" : ${MARGIN}</b>

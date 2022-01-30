@@ -8,59 +8,177 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>Расчет напряжений в сварных швах</title>
 	
+	<style>
+		body {
+			background-image: url("pics/background2.jpg");
+			background-attachment: fixed;
+			background-size: cover;
+				
+		}
+		.w3-row {
+			margin: 40px;
+		}
+		
+		.blocks{
+			display: flex;
+			justify-content: space-between;
+		}
+		.w3-container.hat {
+			margin: 0px;
+			margin-top:0px;
+			padding: 0px;
+			width : 100%;
+			height : 80px;
+			position : fixed;
+			text-align: center;
+		}
+		.choose-scheme{
+			margin-top:0px;
+			padding: 0px;
+			width: 800px;
+			text-align: center;
+		}
+		.block{
+			width: 800px;
+			text-align: center;
+		}
+}
+	</style>
 </head>
 
 <body>	
-	
-				
-		<div class="w3-container w3-center">
-  				<h2>Расчет напряжений в сварных швах</h2>
-  				<h3>Выберете расчетную схему</h3>
-  		</div>
-  		
-  		</br></br>
-		<div class="d-flex justify-content-evenly">
-				<div class="w3-container" class="w3-hover-opacity" >
-				<a href="scheme1.jsp"><img src = "pics/1.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+		<div class="w3-container w3-teal hat">
+			<div class="block">
+		  		<h1>Расчет напряжений в сварных швах</h1>
+		  	</div>
+		</div> 
+  			
+  		</br></br></br></br>	
+  		<h2 class="choose-scheme">Выберите расчетную схему</h2>		
+  		 	 		
+<div class="w3-container w3-center">
+		<div class="w3-row">
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme1.jsp"><img src = "pics/1.png" width="250" height="150" class="w3-padding"></a> 
 				</div>	
-				<div class="w3-container" class="w3-hover-opacity" >
-				<a href="scheme2.jsp"><img src = "pics/2.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>
-				<div class="w3-container" class="w3-hover-opacity" >
-				<a href="scheme3.jsp"><img src = "pics/3.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>
-				<div class="w3-container" class="w3-hover-opacity" >		
-				<a href="scheme4.jsp"><img src = "pics/4.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>
-				<div class="w3-container" class="w3-hover-opacity" >
-				<a href="scheme5.jsp"><img src = "pics/5.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>
-				<div class="w3-container" class="w3-hover-opacity" >
-				<a href="scheme6.jsp"><img src = "pics/6.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>
-		</div>
-	
-		</br></br>
-		<div class="d-flex justify-content-evenly">
+			</div>
+			<div class="w3-col m6 l3">
 				<div class="w3-hover-opacity" >
-				<a href="scheme7.jsp"><img src = "pics/7.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
-				</div>	
-				<div class="w3-hover-opacity" >
-				<a href="scheme8.jsp"><img src = "pics/8.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+				<a href="scheme2.jsp"><img src = "pics/2.png" width="250" height="150" class="w3-padding"></a> 
 				</div>
+			</div>
+			<div class="w3-col m6 l3">
 				<div class="w3-hover-opacity" >
-				<a href="scheme9.jsp"><img src = "pics/9.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+				<a href="scheme3.jsp"><img src = "pics/3.png" width="250" height="150" class="w3-padding"></a> 
 				</div>
+			</div>
+			<div class="w3-col m6 l3">
 				<div class="w3-hover-opacity" >		
-				<a href="scheme10.jsp"><img src = "pics/10.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+				<a href="scheme4.jsp"><img src = "pics/4.png" width="250" height="150" class="w3-padding"></a> 
 				</div>
+			</div>
+			<div class="w3-col m6 l3">	
 				<div class="w3-hover-opacity" >
-				<a href="scheme11.jsp"><img src = "pics/11.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+				<a href="scheme5.jsp"><img src = "pics/5.png" width="250" height="150" class="w3-padding"></a> 
 				</div>
+			</div>
+			<div class="w3-col m6 l3">	
 				<div class="w3-hover-opacity" >
-				<a href="scheme12.jsp"><img src = "pics/12.png" width="250" height="150" class="w3-border w3-padding" class="w3-image"></a> 
+				<a href="scheme6.jsp"><img src = "pics/6.png" width="250" height="150" class="w3-padding"></a> 
 				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme7.jsp"><img src = "pics/7.png" width="250" height="150" class="w3-padding"></a> 
+				</div>	
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme8.jsp"><img src = "pics/8.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme9.jsp"><img src = "pics/9.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >		
+				<a href="scheme10.jsp"><img src = "pics/10.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">	
+				<div class="w3-hover-opacity" >
+				<a href="scheme11.jsp"><img src = "pics/11.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">	
+				<div class="w3-hover-opacity" >
+				<a href="scheme12.jsp"><img src = "pics/12.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme13.jsp"><img src = "pics/13.png" width="250" height="150" class="w3-padding"></a> 
+				</div>	
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme14.jsp"><img src = "pics/14.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme15.jsp"><img src = "pics/15.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >		
+				<a href="scheme16.jsp"><img src = "pics/16.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">	
+				<div class="w3-hover-opacity" >
+				<a href="scheme17.jsp"><img src = "pics/17.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">	
+				<div class="w3-hover-opacity" >
+				<a href="scheme18.jsp"><img src = "pics/18.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme19.jsp"><img src = "pics/19.png" width="250" height="150" class="w3-padding"></a> 
+				</div>	
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme20.jsp"><img src = "pics/20.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >
+				<a href="scheme21.jsp"><img src = "pics/21.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">
+				<div class="w3-hover-opacity" >		
+				<a href="scheme22.jsp"><img src = "pics/22.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			<div class="w3-col m6 l3">	
+				<div class="w3-hover-opacity" >
+				<a href="scheme23.jsp"><img src = "pics/23.png" width="250" height="150" class="w3-padding"></a> 
+				</div>
+			</div>
+			
 		</div>
-	
+		
+		
+</div>	
+		
+
 </body>
 </html>
