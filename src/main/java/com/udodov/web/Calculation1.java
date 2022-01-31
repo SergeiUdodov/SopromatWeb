@@ -99,10 +99,11 @@ public class Calculation1 extends HttpServlet {
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
@@ -141,10 +142,11 @@ public class Calculation1 extends HttpServlet {
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
@@ -182,11 +184,11 @@ public class Calculation1 extends HttpServlet {
 	       double result = (1.41*P)/(l*(k1+k2));
 	       
 	       String electrode = request.getParameter("electrode");
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
 	       
-	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
@@ -222,10 +224,11 @@ public class Calculation1 extends HttpServlet {
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
@@ -260,10 +263,11 @@ public class Calculation1 extends HttpServlet {
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
@@ -299,10 +303,11 @@ public class Calculation1 extends HttpServlet {
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       Double margin = dbUtil.getMaterialStrength(electrode) / result;
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
-	       request.setAttribute("RESULT", result);
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
 	       request.setAttribute("MARGIN", margin);
 			
 			
