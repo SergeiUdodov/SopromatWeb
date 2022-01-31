@@ -15,8 +15,8 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class Calculation
  */
-@WebServlet("/Calculation1")
-public class Calculation1 extends HttpServlet {
+@WebServlet("/Calculation1_6")
+public class Calculation1_6 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private DbUtil dbUtil;

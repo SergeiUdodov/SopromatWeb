@@ -35,7 +35,7 @@
 			</div>
 <div  class="flex-container">	
 	<div class="w3-col m6 l4 s12 w3-animate-left">
-		<form action="Calculation1" method="GET" class="w3-container">
+		<form action="Calculation1_6" method="GET" class="w3-container">
 		
 		  <h2 class="w3-text-white">Исходные данные</h2>
 		  <input type="hidden" name="command" value="SCHEME4" />
