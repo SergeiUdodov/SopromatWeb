@@ -18,24 +18,24 @@
 			<div class="pic w3-animate-top">
 				<br>
 				<div class="w3-container w3-center">
-					<img src = "pics/6.png" width="300" height="150" class="w3-padding">
+					<img src = "pics/18.png" width="300" height="150" class="w3-padding">
 				</div>
 			</div>
 <div  class="flex-container">	
 	<div class="w3-col m6 l4 s12 w3-animate-left">
-		<form action="Calculation1_6" method="GET" class="w3-container">
+		<form action="Calculation13_18" method="GET" class="w3-container">
 		
 		  <h2 class="w3-text-white">Исходные данные</h2>
-		  <input type="hidden" name="command" value="SCHEME6" />
+		  <input type="hidden" name="command" value="SCHEME18" />
 		  <p>
-		  <h4 class="w3-text-white">P, Н :</h4>
-		  <input class="w3-input w3-border w3-round" name="power" type="text" value="${POWER}"></p>
+		  <h4 class="w3-text-white">M, Н*м :</h4>
+		  <input class="w3-input w3-border w3-round" name="moment" type="text" value="${MOMENT}"></p>
 		  <p>
-		  <h4 class="w3-text-white">l, мм :</h4>
-		  <input class="w3-input w3-border w3-round" name="length" type="text" value="${LENGTH}"></p>
+		  <h4 class="w3-text-white">d, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="diameter" type="text" value="${DIAMETER}"></p>
 		  <p>
-		  <h4 class="w3-text-white">h, мм :</h4>
-		  <input class="w3-input w3-border w3-round" name="width" type="text" value="${WIDTH}"></p>
+		  <h4 class="w3-text-white">k, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="leg" type="text" value="${LEG}"></p>
 		  <p>
 		  <h4 class="w3-text-white">Материал сварного шва :</h4>
 		  <select name="electrode" class="form-select" aria-label="Default select example">
@@ -45,7 +45,7 @@
 		  <br><br>
 		  <input type="submit" value="Рассчитать"/></p>
 		  	<br>			
-				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Расчетное напряжение, МПа : ${RESULT} </h4>
+				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Напряжение при кручении, МПа : ${RESULT} </h4>
 				<br>
 				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Запас прочности : ${MARGIN}</h4>
 				<br>

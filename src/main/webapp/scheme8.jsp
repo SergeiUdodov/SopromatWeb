@@ -18,15 +18,15 @@
 			<div class="pic w3-animate-top">
 				<br>
 				<div class="w3-container w3-center">
-					<img src = "pics/6.png" width="300" height="150" class="w3-padding">
+					<img src = "pics/8.png" width="300" height="150" class="w3-padding">
 				</div>
 			</div>
 <div  class="flex-container">	
 	<div class="w3-col m6 l4 s12 w3-animate-left">
-		<form action="Calculation1_6" method="GET" class="w3-container">
+		<form action="Calculation7_12" method="GET" class="w3-container">
 		
 		  <h2 class="w3-text-white">Исходные данные</h2>
-		  <input type="hidden" name="command" value="SCHEME6" />
+		  <input type="hidden" name="command" value="SCHEME8" />
 		  <p>
 		  <h4 class="w3-text-white">P, Н :</h4>
 		  <input class="w3-input w3-border w3-round" name="power" type="text" value="${POWER}"></p>
@@ -34,8 +34,11 @@
 		  <h4 class="w3-text-white">l, мм :</h4>
 		  <input class="w3-input w3-border w3-round" name="length" type="text" value="${LENGTH}"></p>
 		  <p>
-		  <h4 class="w3-text-white">h, мм :</h4>
-		  <input class="w3-input w3-border w3-round" name="width" type="text" value="${WIDTH}"></p>
+		  <h4 class="w3-text-white">h1, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="width1" type="text" value="${WIDTH1}"></p>
+		  <p>
+		  <h4 class="w3-text-white">h2, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="width2" type="text" value="${WIDTH2}"></p>
 		  <p>
 		  <h4 class="w3-text-white">Материал сварного шва :</h4>
 		  <select name="electrode" class="form-select" aria-label="Default select example">

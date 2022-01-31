@@ -18,24 +18,33 @@
 			<div class="pic w3-animate-top">
 				<br>
 				<div class="w3-container w3-center">
-					<img src = "pics/6.png" width="300" height="150" class="w3-padding">
+					<img src = "pics/23.png" width="300" height="150" class="w3-padding">
 				</div>
 			</div>
 <div  class="flex-container">	
 	<div class="w3-col m6 l4 s12 w3-animate-left">
-		<form action="Calculation1_6" method="GET" class="w3-container">
+		<form action="Calculation19_23" method="GET" class="w3-container">
 		
 		  <h2 class="w3-text-white">Исходные данные</h2>
-		  <input type="hidden" name="command" value="SCHEME6" />
+		  <input type="hidden" name="command" value="SCHEME23" />
 		  <p>
 		  <h4 class="w3-text-white">P, Н :</h4>
-		  <input class="w3-input w3-border w3-round" name="power" type="text" value="${POWER}"></p>
+		  <input class="w3-input w3-border w3-round" name="power1" type="text" value="${POWER1}"></p>
+		  <p>
+		  <h4 class="w3-text-white">Q, Н :</h4>
+		  <input class="w3-input w3-border w3-round" name="power2" type="text" value="${POWER2}"></p>
 		  <p>
 		  <h4 class="w3-text-white">l, мм :</h4>
 		  <input class="w3-input w3-border w3-round" name="length" type="text" value="${LENGTH}"></p>
 		  <p>
-		  <h4 class="w3-text-white">h, мм :</h4>
+		  <h4 class="w3-text-white">l1, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="length1" type="text" value="${LENGTH1}"></p>
+		  <p>
+		  <h4 class="w3-text-white">b, мм :</h4>
 		  <input class="w3-input w3-border w3-round" name="width" type="text" value="${WIDTH}"></p>
+		  <p>
+		  <h4 class="w3-text-white">k, мм :</h4>
+		  <input class="w3-input w3-border w3-round" name="leg" type="text" value="${LEG}"></p>
 		  <p>
 		  <h4 class="w3-text-white">Материал сварного шва :</h4>
 		  <select name="electrode" class="form-select" aria-label="Default select example">
@@ -45,9 +54,13 @@
 		  <br><br>
 		  <input type="submit" value="Рассчитать"/></p>
 		  	<br>			
-				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Расчетное напряжение, МПа : ${RESULT} </h4>
+				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Напряжение кручения, МПа : ${RESULT1} </h4>
 				<br>
-				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Запас прочности : ${MARGIN}</h4>
+				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Запас прочности кручения : ${MARGIN1}</h4>
+				<br>
+				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Напряжение среза, МПа : ${RESULT2} </h4>
+				<br>
+				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Запас прочности на срез : ${MARGIN2}</h4>
 				<br>
 				<h4 class="w3-text-orange" style="text-shadow:2px 2px 0 #444">Используемый электрод : ${ELECTRODE} </h4>
 				<br>
@@ -60,8 +73,8 @@
 			</div>
 	</div>	
 	
-</div>		
-		
+</div>			
+	
 </body>
 
 </html>

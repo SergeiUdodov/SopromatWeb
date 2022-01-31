@@ -76,16 +76,22 @@ public class Calculation7_12 extends HttpServlet {
 
 	private void scheme7(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		   double P = 0; 
+		   double M = 0; 
+	       double l = 0;
 	       double h = 0;
+	       double h1 = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme1.jsp");
+				request.getRequestDispatcher("/scheme7.jsp");
 		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
+		    M  = Double.parseDouble(request.getParameter("moment")); 
+	        l = Double.parseDouble(request.getParameter("length"));
 	        h = Double.parseDouble(request.getParameter("width"));
-	        request.setAttribute("POWER", P);	       
+	        h1 = Double.parseDouble(request.getParameter("width1"));
+	        request.setAttribute("MOMENT", M);
+	        request.setAttribute("LENGTH", l);
 	        request.setAttribute("WIDTH", h);
+	        request.setAttribute("WIDTH1", h1);
 	        
 		} catch (NumberFormatException e) {
 			
@@ -95,7 +101,7 @@ public class Calculation7_12 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = P/(2*h);
+	       double result = (3*h*M)/(l*h1*(3*h*h-6*h*h1+4*h1*h1));
 	       
 	       String electrode = request.getParameter("electrode");
 	       
@@ -115,20 +121,20 @@ public class Calculation7_12 extends HttpServlet {
 
 		   double P = 0; 
 	       double l = 0;
-	       double k1 = 0;
-	       double k2 = 0;
+	       double h1 = 0;
+	       double h2 = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme2.jsp");
+				request.getRequestDispatcher("/scheme8.jsp");
 		try {
 		    P  = Double.parseDouble(request.getParameter("power")); 
 	        l = Double.parseDouble(request.getParameter("length"));
-	        k1 = Double.parseDouble(request.getParameter("leg1"));
-	        k2 = Double.parseDouble(request.getParameter("leg2"));
-	        request.setAttribute("POWER", P);	       
+	        h1 = Double.parseDouble(request.getParameter("width1"));
+	        h2 = Double.parseDouble(request.getParameter("width2"));
+	        request.setAttribute("POWER", P);
 	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("LEG1", k1);
-	        request.setAttribute("LEG2", k2);
+	        request.setAttribute("WIDTH1", h1);
+	        request.setAttribute("WIDTH1", h2);
 	        
 		} catch (NumberFormatException e) {
 			
@@ -138,7 +144,7 @@ public class Calculation7_12 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = (1.41*P)/(l*(k1+k2));
+	       double result = P/(l*(h1 + h2));
 	       
 	       String electrode = request.getParameter("electrode");
 	       
@@ -156,22 +162,19 @@ public class Calculation7_12 extends HttpServlet {
 
 	private void scheme9(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		   double P = 0; 
+	   	   double M = 0; 
 	       double l = 0;
-	       double k1 = 0;
-	       double k2 = 0;
+	       double h = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme3.jsp");
+				request.getRequestDispatcher("/scheme9.jsp");
 		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
+		    M  = Double.parseDouble(request.getParameter("moment")); 
 	        l = Double.parseDouble(request.getParameter("length"));
-	        k1 = Double.parseDouble(request.getParameter("leg1"));
-	        k2 = Double.parseDouble(request.getParameter("leg2"));
-	        request.setAttribute("POWER", P);	       
+	        h = Double.parseDouble(request.getParameter("width"));
+	        request.setAttribute("MOMENT", M);
 	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("LEG1", k1);
-	        request.setAttribute("LEG2", k2);
+	        request.setAttribute("WIDTH", h);
 	        
 		} catch (NumberFormatException e) {
 			
@@ -181,9 +184,10 @@ public class Calculation7_12 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = (1.41*P)/(l*(k1+k2));
+	       double result = (6*M)/(l*h*h);
 	       
 	       String electrode = request.getParameter("electrode");
+	       
 	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
 	       
 	       
@@ -203,7 +207,7 @@ public class Calculation7_12 extends HttpServlet {
 	       double k = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme4.jsp");
+				request.getRequestDispatcher("/scheme10.jsp");
 		try {
 		    P  = Double.parseDouble(request.getParameter("power")); 
 	        l = Double.parseDouble(request.getParameter("length"));
@@ -237,19 +241,24 @@ public class Calculation7_12 extends HttpServlet {
 	}
 
 	private void scheme11(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			double M = 0; 
+		
+		   double M = 0; 
 	       double l = 0;
 	       double h = 0;
+	       double k = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme5.jsp");
+				request.getRequestDispatcher("/scheme11.jsp");
 		try {
 		    M  = Double.parseDouble(request.getParameter("moment")); 
 	        l = Double.parseDouble(request.getParameter("length"));
 	        h = Double.parseDouble(request.getParameter("width"));
+	        k = Double.parseDouble(request.getParameter("leg"));
 	        request.setAttribute("MOMENT", M);
 	        request.setAttribute("LENGTH", l);
 	        request.setAttribute("WIDTH", h);
+	        request.setAttribute("LEG", k);
+	        
 	        
 		} catch (NumberFormatException e) {
 			
@@ -259,7 +268,7 @@ public class Calculation7_12 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = (6*M)/(l*h*h);
+	       double result = (1.41*M)/(l*h*k);
 	       
 	       String electrode = request.getParameter("electrode");
 	       
@@ -279,17 +288,24 @@ public class Calculation7_12 extends HttpServlet {
 		
 		   double P = 0; 
 	       double l = 0;
+	       double l1 = 0;
 	       double h = 0;
+	       double k = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme6.jsp");
+				request.getRequestDispatcher("/scheme12.jsp");
 		try {
 		    P  = Double.parseDouble(request.getParameter("power")); 
 	        l = Double.parseDouble(request.getParameter("length"));
+	        l1 = Double.parseDouble(request.getParameter("length1"));
 	        h = Double.parseDouble(request.getParameter("width"));
+	        k = Double.parseDouble(request.getParameter("leg"));
 	        request.setAttribute("POWER", P);
 	        request.setAttribute("LENGTH", l);
+	        request.setAttribute("LENGTH1", l1);
 	        request.setAttribute("WIDTH", h);
+	        request.setAttribute("LEG", k);
+	        
 	        
 		} catch (NumberFormatException e) {
 			
@@ -299,7 +315,7 @@ public class Calculation7_12 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = P/(l*h);
+	       double result = (1.41*P*l1)/(l*h*k) + (0.707*P)/(k*l);
 	       
 	       String electrode = request.getParameter("electrode");
 	       

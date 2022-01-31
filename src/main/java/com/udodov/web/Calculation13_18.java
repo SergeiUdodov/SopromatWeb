@@ -15,8 +15,8 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class Calculation
  */
-@WebServlet("/Calculation1_6")
-public class Calculation1_6 extends HttpServlet {
+@WebServlet("/Calculation13_18")
+public class Calculation13_18 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private DbUtil dbUtil;
@@ -42,23 +42,23 @@ public class Calculation1_6 extends HttpServlet {
 		String theCommand = request.getParameter("command");
 		
 		switch(theCommand) {
-		case "SCHEME1":
-			scheme1(request, response);
+		case "SCHEME13":
+			scheme13(request, response);
 			break;
-		case "SCHEME2":
-			scheme2(request, response);
+		case "SCHEME14":
+			scheme14(request, response);
 			break;
-		case "SCHEME3":
-			scheme3(request, response);
+		case "SCHEME15":
+			scheme15(request, response);
 			break;
-		case "SCHEME4":
-			scheme4(request, response);
+		case "SCHEME16":
+			scheme16(request, response);
 			break;
-		case "SCHEME5":
-			scheme5(request, response);
+		case "SCHEME17":
+			scheme17(request, response);
 			break;
-		case "SCHEME6":
-			scheme6(request, response);
+		case "SCHEME18":
+			scheme18(request, response);
 			break;
 			
 		default:
@@ -74,143 +74,27 @@ public class Calculation1_6 extends HttpServlet {
 
 	}
 
-	private void scheme1(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void scheme13(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		   double P = 0; 
+	       double l = 0;
+	       double l1 = 0;
 	       double h = 0;
 	       
+	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme1.jsp");
+				request.getRequestDispatcher("/scheme13.jsp");
 		try {
 		    P  = Double.parseDouble(request.getParameter("power")); 
+	        l = Double.parseDouble(request.getParameter("length"));
+	        l1 = Double.parseDouble(request.getParameter("length1"));
 	        h = Double.parseDouble(request.getParameter("width"));
-	        request.setAttribute("POWER", P);	       
-	        request.setAttribute("WIDTH", h);
-	        
-		} catch (NumberFormatException e) {
-			
-			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
-					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
-			request.setAttribute("MESSAGE", message);
-			dispatcher.forward(request, response);
-			
-		}
-	       double result = P/(2*h);
 	       
-	       String electrode = request.getParameter("electrode");
-	       
-	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
-	       
-	       
-	       request.setAttribute("RESULT", String.format("%.2f",result));
-	       request.setAttribute("ELECTRODE", electrode);
-	       request.setAttribute("MARGIN", margin);
-			
-			
-			dispatcher.forward(request, response);
-		
-	}
-
-	private void scheme2(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		   double P = 0; 
-	       double l = 0;
-	       double k1 = 0;
-	       double k2 = 0;
-	       
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme2.jsp");
-		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
-	        l = Double.parseDouble(request.getParameter("length"));
-	        k1 = Double.parseDouble(request.getParameter("leg1"));
-	        k2 = Double.parseDouble(request.getParameter("leg2"));
-	        request.setAttribute("POWER", P);	       
-	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("LEG1", k1);
-	        request.setAttribute("LEG2", k2);
-	        
-		} catch (NumberFormatException e) {
-			
-			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
-					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
-			request.setAttribute("MESSAGE", message);
-			dispatcher.forward(request, response);
-			
-		}
-	       double result = (1.41*P)/(l*(k1+k2));
-	       
-	       String electrode = request.getParameter("electrode");
-	       
-	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
-	       
-	       
-	       request.setAttribute("RESULT", String.format("%.2f",result));
-	       request.setAttribute("ELECTRODE", electrode);
-	       request.setAttribute("MARGIN", margin);
-			
-			
-			dispatcher.forward(request, response);
-		
-	}
-
-	private void scheme3(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		   double P = 0; 
-	       double l = 0;
-	       double k1 = 0;
-	       double k2 = 0;
-	       
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme3.jsp");
-		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
-	        l = Double.parseDouble(request.getParameter("length"));
-	        k1 = Double.parseDouble(request.getParameter("leg1"));
-	        k2 = Double.parseDouble(request.getParameter("leg2"));
-	        request.setAttribute("POWER", P);	       
-	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("LEG1", k1);
-	        request.setAttribute("LEG2", k2);
-	        
-		} catch (NumberFormatException e) {
-			
-			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
-					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
-			request.setAttribute("MESSAGE", message);
-			dispatcher.forward(request, response);
-			
-		}
-	       double result = (1.41*P)/(l*(k1+k2));
-	       
-	       String electrode = request.getParameter("electrode");
-	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
-	       
-	       
-	       request.setAttribute("RESULT", String.format("%.2f",result));
-	       request.setAttribute("ELECTRODE", electrode);
-	       request.setAttribute("MARGIN", margin);
-			
-			
-			dispatcher.forward(request, response);
-		
-	}
-
-	private void scheme4(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		   double P = 0; 
-	       double l = 0;
-	       double k = 0;
-	       
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme4.jsp");
-		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
-	        l = Double.parseDouble(request.getParameter("length"));
-	        k = Double.parseDouble(request.getParameter("leg"));
 	        request.setAttribute("POWER", P);
 	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("LEG", k);
+	        request.setAttribute("LENGTH1", l1);
+	        request.setAttribute("WIDTH", h);
+	        
 	        
 		} catch (NumberFormatException e) {
 			
@@ -220,33 +104,43 @@ public class Calculation1_6 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = (0.707*P)/(l*k);
+	       double resultNorm = (6*P*l1)/(l*h*h);
+	       
+	       double resultTang = P/(l*h);
 	       
 	       String electrode = request.getParameter("electrode");
 	       
-	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
+	       Double electrodeStrength = dbUtil.getMaterialStrength(electrode);
+	       
+	       String marginNorm = String.format("%.2f", electrodeStrength / resultNorm);
+	       
+	       String marginTang = String.format("%.2f", electrodeStrength / resultTang);
 	       
 	       
-	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("RESULT_NORM", String.format("%.2f",resultNorm));
+	       request.setAttribute("RESULT_TANG", String.format("%.2f",resultTang));
 	       request.setAttribute("ELECTRODE", electrode);
-	       request.setAttribute("MARGIN", margin);
+	       request.setAttribute("MARGIN_NORM", marginNorm);
+	       request.setAttribute("MARGIN_TANG", marginTang);
 			
 			
 			dispatcher.forward(request, response);
 		
 	}
 
-	private void scheme5(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void scheme14(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		   double M = 0; 
 	       double l = 0;
 	       double h = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme5.jsp");
+				request.getRequestDispatcher("/scheme14.jsp");
 		try {
 		    M  = Double.parseDouble(request.getParameter("moment")); 
 	        l = Double.parseDouble(request.getParameter("length"));
 	        h = Double.parseDouble(request.getParameter("width"));
+	        
 	        request.setAttribute("MOMENT", M);
 	        request.setAttribute("LENGTH", l);
 	        request.setAttribute("WIDTH", h);
@@ -259,7 +153,7 @@ public class Calculation1_6 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = (6*M)/(l*h*h);
+	       double result = (6*M)/(l*l*h);
 	       
 	       String electrode = request.getParameter("electrode");
 	       
@@ -275,21 +169,23 @@ public class Calculation1_6 extends HttpServlet {
 		
 	}
 
-	private void scheme6(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	private void scheme15(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		   double P = 0; 
+		   double M = 0; 
 	       double l = 0;
-	       double h = 0;
+	       double k = 0;
 	       
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/scheme6.jsp");
+				request.getRequestDispatcher("/scheme15.jsp");
 		try {
-		    P  = Double.parseDouble(request.getParameter("power")); 
+		    M  = Double.parseDouble(request.getParameter("moment")); 
 	        l = Double.parseDouble(request.getParameter("length"));
-	        h = Double.parseDouble(request.getParameter("width"));
-	        request.setAttribute("POWER", P);
-	        request.setAttribute("LENGTH", l);
-	        request.setAttribute("WIDTH", h);
+	        k = Double.parseDouble(request.getParameter("leg"));
+	        
+	        request.setAttribute("MOMENT", M);
+	        request.setAttribute("LENGTH", l);	        
+	        request.setAttribute("LEG", k);
+	        
 	        
 		} catch (NumberFormatException e) {
 			
@@ -299,7 +195,7 @@ public class Calculation1_6 extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}
-	       double result = P/(l*h);
+	       double result = (4.24*M)/(l*l*k);
 	       
 	       String electrode = request.getParameter("electrode");
 	       
@@ -315,6 +211,154 @@ public class Calculation1_6 extends HttpServlet {
 		
 	}
 
-	
+	private void scheme16(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		   double P = 0; 
+	       double l = 0;
+	       double l1 = 0;
+	       double k = 0;
+	       
+	       
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("/scheme16.jsp");
+		try {
+		    P  = Double.parseDouble(request.getParameter("power")); 
+	        l = Double.parseDouble(request.getParameter("length"));
+	        l1 = Double.parseDouble(request.getParameter("length1"));
+	        k = Double.parseDouble(request.getParameter("leg"));
+	       
+	        request.setAttribute("POWER", P);
+	        request.setAttribute("LENGTH", l);
+	        request.setAttribute("LENGTH1", l1);
+	        request.setAttribute("LEG", k);
+	        
+	        
+		} catch (NumberFormatException e) {
+			
+			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
+					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
+			request.setAttribute("MESSAGE", message);
+			dispatcher.forward(request, response);
+			
+		}
+	       double resultTang1 = (4.24*P*l1)/(l*l*k);
+	       
+	       double resultTang2 = (0.707*P)/(l*k);
+	       
+	       String electrode = request.getParameter("electrode");
+	       
+	       Double electrodeStrength = dbUtil.getMaterialStrength(electrode);
+	       
+	       String marginTang1 = String.format("%.2f", electrodeStrength / resultTang1);
+	       
+	       String marginTang2 = String.format("%.2f", electrodeStrength / resultTang2);
+	       
+	       
+	       request.setAttribute("RESULT_TANG1", String.format("%.2f",resultTang1));
+	       request.setAttribute("RESULT_TANG2", String.format("%.2f",resultTang2));
+	       request.setAttribute("ELECTRODE", electrode);
+	       request.setAttribute("MARGIN_TANG1", marginTang1);
+	       request.setAttribute("MARGIN_TANG2", marginTang2);
+			
+			
+			dispatcher.forward(request, response);
+		
+	}
+
+	private void scheme17(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		   double P = 0; 
+	       double l = 0;
+	       double l1 = 0;
+	       double h = 0;
+	       
+	       
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("/scheme17.jsp");
+		try {
+		    P  = Double.parseDouble(request.getParameter("power")); 
+	        l = Double.parseDouble(request.getParameter("length"));
+	        l1 = Double.parseDouble(request.getParameter("length1"));
+	        h = Double.parseDouble(request.getParameter("width"));
+	       
+	        request.setAttribute("POWER", P);
+	        request.setAttribute("LENGTH", l);
+	        request.setAttribute("LENGTH1", l1);
+	        request.setAttribute("WIDTH", h);
+	        
+	        
+		} catch (NumberFormatException e) {
+			
+			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
+					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
+			request.setAttribute("MESSAGE", message);
+			dispatcher.forward(request, response);
+			
+		}
+	       double resultNorm = (6*P*l1)/(l*l*h);
+	       
+	       double resultTang = P/(l*h);
+	       
+	       String electrode = request.getParameter("electrode");
+	       
+	       Double electrodeStrength = dbUtil.getMaterialStrength(electrode);
+	       
+	       String marginNorm = String.format("%.2f", electrodeStrength / resultNorm);
+	       
+	       String marginTang = String.format("%.2f", electrodeStrength / resultTang);
+	       
+	       
+	       request.setAttribute("RESULT_NORM", String.format("%.2f",resultNorm));
+	       request.setAttribute("RESULT_TANG", String.format("%.2f",resultTang));
+	       request.setAttribute("ELECTRODE", electrode);
+	       request.setAttribute("MARGIN_NORM", marginNorm);
+	       request.setAttribute("MARGIN_TANG", marginTang);
+			
+			
+			dispatcher.forward(request, response);
+		
+	}
+
+	private void scheme18(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		   double M = 0; 
+	       double d = 0;
+	       double k = 0;
+	       
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("/scheme18.jsp");
+		try {
+		    M  = Double.parseDouble(request.getParameter("moment")); 
+	        d = Double.parseDouble(request.getParameter("diameter"));
+	        k = Double.parseDouble(request.getParameter("leg"));
+	        
+	        request.setAttribute("MOMENT", M);
+	        request.setAttribute("DIAMETER", d);	        
+	        request.setAttribute("LEG", k);
+	        
+	        
+		} catch (NumberFormatException e) {
+			
+			String message = "Ошибка! Введите числовые значения в поля исходных данных<br>"
+					+ "В десятичных дробях используйте " + "\".\"" + " вместо " + "\",\"" + " в качестве разделителя";
+			request.setAttribute("MESSAGE", message);
+			dispatcher.forward(request, response);
+			
+		}
+	       double result = (1.27*M)/(d*k*(Math.sqrt(2.0)*d + k));
+	       
+	       String electrode = request.getParameter("electrode");
+	       
+	       String margin = String.format("%.2f",dbUtil.getMaterialStrength(electrode) / result);
+	       
+	       
+	       request.setAttribute("RESULT", String.format("%.2f",result));
+	       request.setAttribute("ELECTRODE", electrode);
+	       request.setAttribute("MARGIN", margin);
+			
+			
+			dispatcher.forward(request, response);
+		
+	}
 
 }
