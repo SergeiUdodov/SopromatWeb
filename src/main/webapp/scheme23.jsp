@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style-schemes.css">
+	<link rel="stylesheet" type="text/css" href="css/style-schemes.css"> 
 	<title>Расчет напряжений</title>
 	
 </head>
@@ -66,8 +66,8 @@
 				<br>
 		</form>
 	</div>
-	
-	<div class="w3-container w3-center bottom">
+	<br><br><br><br>
+	<div class="w3-container w3-center bottom w3-display-bottommiddle">
 			<div class="bottom-text">
 			  <h4><a href="index.html" class="w3-text-red">На главную</a></h4>
 			</div>

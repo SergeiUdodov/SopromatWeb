@@ -13,8 +13,11 @@
 			height: auto;
 			background-color: #333333;
 			adding: 0px;
+			flex: 0 0 auto;
+			position : fixed;
 		}
 		.bottom-text{
 			margin-top: 15px;
 			margin-bottom: 15px;
 		}
+		

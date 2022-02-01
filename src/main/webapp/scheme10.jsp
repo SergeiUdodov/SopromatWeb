@@ -54,7 +54,7 @@
 		</form>
 	</div>
 	
-	<div class="w3-container w3-center bottom">
+	<div class="w3-container w3-center bottom w3-display-bottommiddle">
 			<div class="bottom-text">
 			  <h4><a href="index.html" class="w3-text-red">На главную</a></h4>
 			</div>
